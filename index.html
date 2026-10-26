@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gato | Marilu</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js" defer></script>
+</head>
+
+<body>
+    <header class="encabezado">
+        <nav class="navegacion">
+            <a class="logo" > <span class="rosa" >MM®</span> </a>
+            <a href="#juego" class="enlace-portfolio">Regresar al PortFolio↗</a> <!-- Enlace al Portfolio-->
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: PRESENTACIÓN -->
+        <section class="presentacion" id="inicio">
+            <div class="etiqueta">
+                <span class="punto"></span>
+                UN CLÁSICO PARA DOS
+            </div>
+
+            <h1>TIC-TAC,<br>
+                <span>TOE.</span>
+            </h1>
+
+            <p class="descripcion">
+                Bienvenidos a mi juego del gato. Pon a prueba tu
+                estrategia, anticipa los movimientos de tu rival
+                y consigue tres en línea.
+            </p>
+
+            <div class="informacion">
+                <article class="tarjeta-info">
+                    <span class="numero">01</span>
+                    <h2>¿Quién lo realizó?</h2>
+                    <p>Un juego creado por Maria Meza para la clase de Simulación de Sistemas.</p>
+                </article>
+
+                <article class="tarjeta-info">
+                    <span class="numero">02</span>
+                    <h2>¿Cómo se juega?</h2>
+                    <p>Dos jugadores se turnan para colocar sus símbolos.
+                    Gana quien consiga tres en horizontal, vertical o diagonal.</p>
+                </article>
+            </div>
+
+            <a href="#juego" class="boton-principal"> <!-- Enviar directo al tablero -->
+                Comenzar partida <span>↓</span>
+            </a>
+
+            <span class="decoracion decoracion-uno">✳</span>
+            <span class="decoracion decoracion-dos">✳</span>
+        </section>
+
+        <!-- SECCIÓN 2: JUEGO -->
+        <section class="seccion-juego" id="juego">
+            <div class="titulo-seccion">
+                <div>
+                    <span class="subtitulo">QUE COMIENCE EL JUEGO</span>
+                   
+                </div>
+
+                <div class="contador-partida">
+                    <span class="punto"></span>
+                    LOCAL 
+                </div>
+            </div>
+
+            <!-- Marcador de jugadores -->
+            <div class="marcador">
+                <div class="jugador jugador-mari activo" id="jugadorMari">
+                    <div class="simbolo-marcador">X</div>
+                    <div>
+                        <span class="nombre-jugador">JUGADOR 01</span>
+                        <h3>Marilu</h3>
+                    </div>
+                    <span class="indicador-activo">TURNO</span>
+                </div>
+
+                <div class="separador-marcador">VS</div>
+
+                <div class="jugador jugador-zaynie" id="jugadorZaynie">
+                    <div class="simbolo-marcador simbolo-o">O</div>
+                    <div>
+                        <span class="nombre-jugador">JUGADOR 02</span>
+                        <h3>Zaynie</h3>
+                    </div>
+                    <span class="indicador-activo">TURNO</span>
+                </div>
+            </div>
+
+            <div class="contenedor-tablero">
+                <div class="encabezado-tablero">
+                    <span>EL TABLERO</span>
+                    <span>03 × 03</span>
+                </div>
+
+                <div class="marco-tablero">
+                    <table class="tablero" aria-label="Tablero del juego del gato">
+                        <tbody>
+                            <tr>
+                                <td><button class="casilla" data-index="0" aria-label="Casilla 1" onclick="activo(this)"></button></td>
+                                <td><button class="casilla" data-index="1" aria-label="Casilla 2" onclick="activo(this)"></button></td>
+                                <td><button class="casilla" data-index="2" aria-label="Casilla 3" onclick="activo(this)"></button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="casilla" data-index="3" aria-label="Casilla 4" onclick="activo(this)"></button></td>
+                                <td><button class="casilla" data-index="4" aria-label="Casilla 5" onclick="activo(this)"></button></td>
+                                <td><button class="casilla" data-index="5" aria-label="Casilla 6" onclick="activo(this)"></button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="casilla" data-index="6" aria-label="Casilla 7" onclick="activo(this)"></button></td>
+                                <td><button class="casilla" data-index="7" aria-label="Casilla 8" onclick="activo(this)"></td>
+                                <td><button class="casilla" data-index="8" aria-label="Casilla 9" onclick="activo(this)"></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="estado-partida" id="ganador" aria-live="polite">
+                    <span class="estado-icono">✳</span>
+                    <span id="mensaje">Es el turno de Mari. ¡Mucha suerte!</span>
+                </div>
+
+                <button type="button" class="boton-reiniciar" onclick="reiniciar()">
+                    <span>↻</span> Reiniciar partida
+                </button>
+            </div>
+
+            <p class="nota-juego">
+                <span>♥</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <span class="rosa">M<span class="rosa">M®</span></span>
+        <p>JUEGO AMISTOSO 1 · 2026</p>
+    </footer>
+</body>
+</html>
